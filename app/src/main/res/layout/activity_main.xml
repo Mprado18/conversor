@@ -31,7 +31,7 @@
         android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text=""
         android:theme="@style/textViewStyle"
         app:layout_constraintBottom_toTopOf="@+id/buttonConvert"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -40,21 +40,21 @@
 
 
     <RadioButton
-        android:id="@+id/convertGxMl"
+        android:id="@+id/convertCAndF"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/converter_grama_em_ml"
+        android:hint="@string/converter_em_celsius_fahrenheit"
         android:theme="@style/radioButtoStyle"
-        app:layout_constraintBottom_toTopOf="@+id/convertMlxG"
+        app:layout_constraintBottom_toTopOf="@+id/convertFAndC"
         app:layout_constraintTop_toBottomOf="@+id/textMenu"
         tools:layout_editor_absoluteX="0dp" />
 
     <RadioButton
-        android:id="@+id/convertMlxG"
+        android:id="@+id/convertFAndC"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
-        android:hint="@string/converter_ml_em_grama"
+        android:hint="@string/converter_fahrenheit_em_celsius"
         android:theme="@style/radioButtoStyle"
         app:layout_constraintBottom_toTopOf="@+id/textInput" />
 

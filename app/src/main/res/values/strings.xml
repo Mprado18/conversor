@@ -4,4 +4,5 @@
     <string name="digite_aqui_o_valor_a_ser_convertido">Digite aqui o valor a ser convertido</string>
     <string name="converter_ml_em_grama">Converter ml em grama</string>
     <string name="converter">Converter</string>
+    <string name="selecione_o_que_deseja">Selecione o que deseja:</string>
 </resources>

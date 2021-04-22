@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">conversor</string>
-    <string name="converter_grama_em_ml">Converter grama em ml</string>
+    <string name="converter_fahrenheit_em_celsius">Converter Fahrenheit em Celsius</string>
     <string name="digite_aqui_o_valor_a_ser_convertido">Digite aqui o valor a ser convertido</string>
-    <string name="converter_ml_em_grama">Converter ml em grama</string>
+    <string name="converter_em_celsius_fahrenheit">Converter Celsius em Fahrenheit </string>
     <string name="converter">Converter</string>
     <string name="selecione_o_que_deseja">Selecione o que deseja:</string>
 </resources>

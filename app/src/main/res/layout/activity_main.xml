@@ -8,66 +8,85 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textMenu"
-        android:layout_width="match_parent"
+        android:id="@+id/text_menu"
+        style="@style/text_menu_style"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/selecione_o_que_deseja"
-        app:layout_constraintTop_toTopOf="parent"
-        android:theme="@style/textMenuStyle"
-        android:layout_marginTop="40dp" />
-
-    <EditText
-        android:id="@+id/textInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="188dp"
-        android:hint="@string/digite_aqui_o_valor_a_ser_convertido"
-        android:paddingStart="14dp"
-        android:singleLine="true"
-        android:theme="@style/inputStyle"
+        android:layout_marginStart="@dimen/margin_start"
+        android:layout_marginTop="26dp"
+        android:layout_marginEnd="@dimen/margin_end"
+        android:text="@string/select_a_option"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <RadioButton
+        android:id="@+id/convert_celsius_in_fahrenheit"
+        style="@style/radio_button_style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_start"
+        android:layout_marginTop="@dimen/margin_top"
+        android:layout_marginEnd="@dimen/margin_end"
+        android:hint="@string/convert_celsius_in_fahrenheit"
+        app:layout_constraintBottom_toTopOf="@id/convert_fahrenheit_in_celsius"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_menu" />
+
+    <RadioButton
+        android:id="@+id/convert_fahrenheit_in_celsius"
+        style="@style/radio_button_style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_start"
+        android:layout_marginEnd="@dimen/margin_end"
+        android:hint="@string/convert_fahrenheit_in_celsius"
+        app:layout_constraintBottom_toTopOf="@id/text_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/convert_celsius_in_fahrenheit" />
+
+    <EditText
+        android:id="@+id/text_input"
+        style="@style/input_style"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_start"
+        android:layout_marginTop="@dimen/margin_top"
+        android:layout_marginEnd="@dimen/margin_end"
+        android:hint="@string/input_value_to_convert"
+        android:padding="16dp"
+        android:singleLine="true"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/convert_fahrenheit_in_celsius" />
+
     <TextView
-        android:id="@+id/result"
+        android:id="@+id/degree"
+        style="@style/degrees_view_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=""
-        android:theme="@style/textViewStyle"
-        app:layout_constraintBottom_toTopOf="@+id/buttonConvert"
+        app:layout_constraintBottom_toTopOf="@id/button_convert"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInput" />
-
-
-    <RadioButton
-        android:id="@+id/convertCAndF"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/converter_em_celsius_fahrenheit"
-        android:theme="@style/radioButtoStyle"
-        app:layout_constraintBottom_toTopOf="@+id/convertFAndC"
-        app:layout_constraintTop_toBottomOf="@+id/textMenu"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <RadioButton
-        android:id="@+id/convertFAndC"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:hint="@string/converter_fahrenheit_em_celsius"
-        android:theme="@style/radioButtoStyle"
-        app:layout_constraintBottom_toTopOf="@+id/textInput" />
+        app:layout_constraintTop_toBottomOf="@id/text_input"
+        tools:text="35°" />
 
     <Button
-        android:id="@+id/buttonConvert"
-        android:layout_width="match_parent"
+        android:id="@+id/button_convert"
+        style="@style/button_convert_style"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="20dp"
-        android:padding="15dp"
-        android:text="@string/converter"
-        android:theme="@style/buttonConvertStyle"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        android:layout_marginStart="@dimen/margin_start"
+        android:layout_marginEnd="@dimen/margin_end"
+        android:layout_marginBottom="@dimen/margin_bottom"
+        android:padding="16dp"
+        android:text="@string/convert"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

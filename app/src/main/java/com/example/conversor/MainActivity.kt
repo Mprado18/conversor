@@ -2,40 +2,50 @@ package com.example.conversor
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_main.*
+import com.example.conversor.databinding.ActivityMainBinding
+
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
 
-        convertCAndF.setOnClickListener {
+        binding.convertCelsiusInFahrenheit.setOnClickListener {
             check(true)
-            convertFAndC.isChecked = false
+            binding.convertFahrenheitInCelsius.isChecked = false
         }
-        convertFAndC.setOnClickListener {
+        binding.convertFahrenheitInCelsius.setOnClickListener {
             check(true)
-            convertCAndF.isChecked = false
+            binding.convertCelsiusInFahrenheit.isChecked = false
         }
 
-        buttonConvert.setOnClickListener {
-            result.text = convertValue()
+        binding.buttonConvert.setOnClickListener {
+            binding.degree.text = convertValue()
         }
     }
 
-    fun receiveValue(): Int {
-        val cap = textInput.text
-        return cap.toString().toInt()
+    private fun receiveValue(): Int {
+        val input = binding.textInput.text.toString()
+        return input.toInt()
     }
 
-    fun convertValue(): String {
-        var result: Int = 0
-        var text: String = ""
-        if (convertCAndF.isChecked) {
+    private fun convertValue(): String {
+        val result: Int
+        var text = ""
+
+        val convertCelsius = binding.convertCelsiusInFahrenheit
+        val convertFahrenheit = binding.convertFahrenheitInCelsius
+
+        if (convertCelsius.isChecked) {
             result = ((receiveValue() * 1.8) + 32).toInt()
             text = "${result}° F"
-        } else if (convertFAndC.isChecked) {
+        } else if (convertFahrenheit.isChecked) {
             result = ((receiveValue() - 32) / 1.8).toInt()
             text = "${result}° C"
         }
